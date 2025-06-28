@@ -45,6 +45,7 @@ const course = {
 
 console.log(course);    // { courseName: 'JS', price: 999, date: 2025-03-21T18:30:00.000Z }
 
+// Destructuring
 const { courseName: cName } = course;
 console.log(cName);     // JS
 
