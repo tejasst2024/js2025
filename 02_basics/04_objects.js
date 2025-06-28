@@ -35,7 +35,20 @@ const users = [
 
 console.log(Object.keys(tinderUser));   // [ 'id', 'name', 'isLoggedIn' ]
 
-console.log(Object.entries(tinderUser));    //
+console.log(Object.entries(tinderUser));    // [ [ 'id', 'id1' ], [ 'name', 'RandomName' ], [ 'isLoggedIn', true ] ]
+
+const course = {
+    courseName: "JS",
+    price: 999,
+    date: new Date(2025,2,22)
+}
+
+console.log(course);    // { courseName: 'JS', price: 999, date: 2025-03-21T18:30:00.000Z }
+
+const { courseName: cName } = course;
+console.log(cName);     // JS
+
+
 
 
 
