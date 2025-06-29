@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM|Part 4</title>
+</head>
+<body style="background-color: black; color: wheat;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        const languages = document.querySelector('.language')
+        languages.appendChild(li)
+    }
+    addLanguage('Python')
+    addLanguage('Java')
+
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        const languages = document.querySelector('.language')
+        languages.appendChild(li)
+    }
+    addOptiLanguage('GoLang')
+
+    // Edit
+    const lang2 = document.querySelector('li:nth-child(2)')
+    const replaceLang = document.createElement('li')
+    replaceLang.appendChild(document.createTextNode('TypeScript'))
+    lang2.replaceWith(replaceLang) 
+
+    const lang1 = document.querySelector('li:nth-child(1)')
+    lang1.outerHTML = "<li>Modern Java Script</li>"
+    
+    // Remove
+    const langlast = document.querySelector('li:last-child')
+    langlast.remove()
+
+</script>
+</html>
