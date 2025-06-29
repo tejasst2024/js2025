@@ -1,0 +1,73 @@
+Javascript Execution Context
+    - How does js run your program
+    - {} - Global execution Context
+            - refer var: this
+        - different for 
+            - browser - window object
+            - nodejs - {}
+    - Single threaded 
+    - Function/Functional Execution Context
+    - Eval execution Context
+        - Property of global object
+    - 2 phases
+        - memory creation phase(creation phase)
+            - just allocate memory
+        - execution phase
+            - perform logic
+    
+    let val1 = 10;
+    let val2 = 5;
+    function addNum(num1, num2) {
+        let total = num1 + num2;
+        return total;
+    }  
+    let result1 = addNum(num1, num2)
+    let result2 = addNum(10, 2)
+
+    1. Global Execution/ Global Env
+        - allocate this
+    2. MCP/ CP - Memoroy Phase
+        - val1 = undefined
+        - val2 = undefined
+        - addNum - definition
+        - result1 = undefined
+        - result2 = undefined
+    3. Execution Phase
+        - val1 - 10
+        - val2 - 5
+        - result1 - addNum(val1, val2) 
+                    - new execution Context
+                    - new variable envioronment
+                    - new execution thread
+                    1. Memoroy Phase
+                        - num1 = undefined
+                        - num2 = undefined
+                        - total = undefined
+                    2. Execution Context
+                        - num1 = 10
+                        - num2 = 5
+                        - total = 15
+                    - returns to global execution Context
+                    - deletes execution Context
+        -  result2 - addNum(10, 2)
+                    - new execution Context
+                    - new variable envioronment
+                    - new execution thread
+                    1. Memoroy phase
+                        - num1 = undefined
+                        - num2 = undefined
+                        - total = undefined
+                    2. Execution phase
+                        - num1 = 10
+                        - num2 = 2
+                        - total = 12
+                    - return to global execution Context
+                    - deletes functional execution Context
+        - execution complete
+- Call stack
+    - Methods are stacked
+    - first you will always put Global Execution Context into the stack
+    - Followed by all the nested functions
+
+
+
