@@ -7,7 +7,7 @@
 (() => {
     console.log("DB CONNECTED");
 })();
-// semi colon is mandatory
+// semi colon is mandatory to end the context of the IIFE function
 
 (() => {
     console.log("DB CONNECTED");

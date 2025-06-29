@@ -58,3 +58,11 @@ const use2 = () => {
 }
 use2()
 
+
+// Implicit return
+const addTwo = (num1, num2) => ( num1 + num2 )
+
+// Implicit returns require paranthesis for proper return
+const add = (num1, num2) => ({ name: "Tejas", age: 24})
+
+
