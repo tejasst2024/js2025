@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Events</title>
+</head>
+<body>
+    <h1>Async Events</h1>
+    <button class="stop">Stop</button>
+</body>
+<script>
+    function randomColor() {
+        console.log("Call to change color");
+        
+        const colorCode = "0123456789ABCDEF"
+        let color = '#'
+        for (let index = 0; index < 6; index++) {
+            const element = colorCode[Math.floor(Math.random() * 16)]
+            color += element;
+        }
+        console.log(color);
+
+        return color;
+    }
+
+    document.querySelector('.stop').addEventListener('click',() => {
+        console.log("Clicked: ", new Date().getSeconds());
+        clearInterval(consoleTimeout);
+        clearInterval(headingTimeout);
+    })
+    const consoleTimeout = setTimeout(() => {
+        console.log("Tejas :", new Date().getSeconds());
+    }, 5000)
+
+    let num = 1;
+    const changeHeading = () => {
+        console.log('changed');
+        const h1 =  document.querySelector('h1');
+        h1.innerHTML = `JS Tuts ${num++}`;
+        const body = document.body;
+        body.style.backgroundColor = randomColor();
+        
+    }
+    const headingTimeout = setInterval(changeHeading, 1000);
+    // When to use class and id
+    // When does async funcs get added to queue
+
+    
+</script>
+</html>
