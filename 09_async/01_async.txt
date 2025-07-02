@@ -1,0 +1,44 @@
+- Javascript
+    - Synchronous
+    - Single threaded
+    - Needs a run time
+
+- Execution Context
+    - execute 1 line of code at a time
+    - Each one waits for the last one to complete before executing
+
+- Blocking 
+    - Synchronous
+    - block the flow of program
+    - Read file sync
+- Non Blocking
+    - Does not block execution
+    - Read file Async
+
+- Js Engine
+    - Memory Heap
+    - Call stack
+
+- WebAPI
+    - In browser or Runtime
+    - DOM API
+    - SetTimeout()  -> Register Callback
+    - setInterval() -> Register Callback 
+    - events        -> Register Callback
+    - fetch()       -> Promise
+     
+    - Register Callback 
+        - this funciton after x mins
+        - Add callback to task Queue
+
+- Task Queue/ Event loop
+    - Make js faster
+    - adds to Call stack
+
+- High Prioriy Queue/ Promise Callback Queue    
+    - add calls to call stack
+    - Promise - do after sometime
+    - High priority
+
+
+
