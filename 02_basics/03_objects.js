@@ -40,7 +40,9 @@ console.log(obj);
 console.log(obj.greeting);  // [Function (anonymous)]
 console.log(obj.greeting());
 // Executed -  22
-// undefined
+// Greetings return
+
+
 
 
 
